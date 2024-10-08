@@ -2,6 +2,22 @@
 include "./../App/configuracao.php";
 include "./../App/Libraries/Rota.php";
 include "./../App/Libraries/Controller.php";
+include "./../App/Libraries/Database.php";
+
+$db = new Database;
+$usuario_id = 10;
+$titulo = 'terceirão não para de falar..';
+$texto = 'turma conversa muito...';
+
+$db->query("INSERT INTO posts (usuario_id, titulo, texto) VALUES (:usuario_id, :titulo, :texto)");
+$db->bind(":usuario_id",$usuario_id);
+$db->bind(":titulo",$titulo);
+$db->bind(":texto",$texto);
+
+$db->executa();
+
+echo '<hr>Total Resultados: '.$db->totalResultados();
+echo '<hr>Ultimo ID inserido'.$db->ultimoIdInserido();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -5,19 +5,26 @@ include "./../App/Libraries/Controller.php";
 include "./../App/Libraries/Database.php";
 
 $db = new Database;
-$usuario_id = 10;
-$titulo = 'terceirão não para de falar..';
-$texto = 'turma conversa muito...';
+date_default_timezone_get("America/Cuiaba");
+$id = 3;
+$usuario_id = 8;
+$titulo = 'Algoritmos';
+$texto = 'Algoritmos é muito legal';
+$criadoEm = date("Y-m-d H:i:s");
 
-$db->query("INSERT INTO posts (usuario_id, titulo, texto) VALUES (:usuario_id, :titulo, :texto)");
+$db->query("UPDATE posts SET usuario_id = :usuario_id, titulo, = :titulo, texto = :texto, criando_em = criandoEm WHERE id=- = :id");
+
+
+// $db->query("INSERT INTO posts (usuario_id, titulo, texto) VALUES (:usuario_id, :titulo, :texto)");
+$db->bind(":id", $id);
 $db->bind(":usuario_id",$usuario_id);
 $db->bind(":titulo",$titulo);
 $db->bind(":texto",$texto);
+$bd->bind(":criandoEm", $criandoEm);
 
 $db->executa();
-
 echo '<hr>Total Resultados: '.$db->totalResultados();
-echo '<hr>Ultimo ID inserido'.$db->ultimoIdInserido();
+// echo '<hr>Ultimo ID inserido'.$db->ultimoIdInserido();
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

@@ -1,8 +1,11 @@
 <?php
 include "./../App/configuracao.php";
+include "./../App/autoload.php";
+/*
 include "./../App/Libraries/Rota.php";
 include "./../App/Libraries/Controller.php";
 include "./../App/Libraries/Database.php";
+
 
 $db = new Database;
 date_default_timezone_get("America/Cuiaba");
@@ -25,6 +28,7 @@ $bd->bind(":criandoEm", $criandoEm);
 $db->executa();
 echo '<hr>Total Resultados: '.$db->totalResultados();
 // echo '<hr>Ultimo ID inserido'.$db->ultimoIdInserido();
+*/
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">

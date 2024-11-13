@@ -16,6 +16,15 @@
             else:
                 return false;
             endif;
+        }// Fim da função armazena
+        public function checarEmail($email){
+            $this->db->query("select email from usuario where email = :e");
+            $this->db->bind(":e", $email);
+            if ($this->db->resultado()) :
+                return true;
+            else:
+                return false;
+            endif;
         }
     }
 ?>

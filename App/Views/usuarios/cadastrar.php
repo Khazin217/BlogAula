@@ -41,9 +41,10 @@
                         <input type="submit" value="Cadastrar" class="btn btn-info btn-block">
                     </div>
                     <div class="col">
-                        <a href="/usuario/logar">Você tem uma conta? Faça login</a>
+                        <a href="<?=URL?>/usuarios/logar">Você tem uma conta? Faça login</a>
                     </div>
                 </div>
+
             </form>
         </div>
     </div>

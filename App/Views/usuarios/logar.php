@@ -7,13 +7,7 @@
             <p class="card-text"><small class="text-muted">Faça o seu login no sistema</small></p>
 
             <form name="logar" method="POST" action="<?= URL ?>/usuarios/logar" class="mt-4">
-            <div class="form-group">
-                    <label for="nome">E-mail: <sup class="text-danger">*</sup></label>
-                    <input type='text' name='nome' id='nome'  class='form-control <?= $dados['nome_erro'] ? 'is-invalid' : '' ?>'>
-                    <div class='invalid-feedback'>
-                        <?= $dados['nome_erro'] ?>
-                    </div>
-                </div>
+            
                 <div class="form-group">
                     <label for="email">E-mail: <sup class="text-danger">*</sup></label>
                     <input type='email' name='email' id='email'  class='form-control <?= $dados['email_erro'] ? 'is-invalid' : '' ?>'>
@@ -28,14 +22,16 @@
                         <?= $dados['senha_erro'] ?>
                     </div>
                 </div>
+               
                 <div class="row">
                     <div class="col">
-                        <input type="submit" value="Cadastrar" class="btn btn-info btn-block">
+                        <input type="submit" value="Logar" class="btn btn-info btn-block">
                     </div>
                     <div class="col">
-                        <a href="#">Você tem uma conta? Faça login</a>
+                        <a href="<?=URL?>/usuarios/cadastrar">Você não tem uma conta? Faça o seu cadastro</a>
                     </div>
                 </div>
+
             </form>
         </div>
     </div>
